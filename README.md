@@ -4,6 +4,14 @@ This extension installs the MariaDB Connector/J Type 4 JDBC driver for creating 
 
 ## Installation
 
+### via Forgebox
+
+1. In your Lucee Administrator, go to the _Extension > Providers_ page and add `https://forgebox.io` as a New Extension Provider if not already present
+2. Go to _Extension > Applications_ and look for _MariaDB_ in the "Not installed" section
+3. Click the extension and install
+
+### Manual
+
 1. Download the the lucee-mariadb.lex file
 2. In your Lucee Administrator, go to the Extension > Applications page
 3. Under "Upload new extension", select the lex file and click "Upload" 
