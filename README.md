@@ -31,6 +31,21 @@ this.datasource = {
 ```
 [More details on defining Lucee datasources](https://docs.lucee.org/guides/cookbooks/datasource-define-datasource.html)
 
+## Migration from the MySQL driver
+
+Note that when inserting records into tables with an auto-increment primary key, the MySQL driver returns the new primary key value in two variables in the query result:
+```
+GENERATED_KEY
+generatedKey
+```
+However the MariaDB driver returns the value in the following variables:
+```
+generatedKey
+insert_id
+```
+Before switching drivers, you should therefore check that your code is using `generatedKey` and **not** `GENERATED_KEY`.
+
+
 ## Credits
 
 Inspiration came from [Bruce Kirkpatrick](https://github.com/jetendo).
