@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Built-Date: 2021-01-11 09:00:00
-version: "2.7.1"
+version: "2.7.3"
 id: "F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
 name: "MariaDB"
 description: "JDBC Type 4 Driver for the MariaDB database."
