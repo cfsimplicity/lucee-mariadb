@@ -11,4 +11,13 @@
 	,"documentation" : "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/README.md"
 	,"bugs":"https://github.com/cfsimplicity/lucee-mariadb/issues"
 	,"thumbnail": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/extension/META-INF/logo.png"
+	, "private":false
+	, "projectURL":"https://github.com/cfsimplicity/lucee-mariadb"
+	, "repository":{
+	    "type":"git",
+	    "URL":"https://github.com/cfsimplicity/lucee-mariadb"
+	}
+	, "scripts":{
+	    "build":"task run buildExtension"
+	}
 }

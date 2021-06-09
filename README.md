@@ -46,6 +46,13 @@ insert_id
 Before switching drivers, you should therefore check that your code is using `generatedKey` and **not** `GENERATED_KEY`.
 
 
+## Build .lex and .zip
+
+```
+box run-script build
+```
+
 ## Credits
 
 Inspiration came from [Bruce Kirkpatrick](https://github.com/jetendo).
+
