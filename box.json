@@ -1,6 +1,6 @@
 {
 	"name": "Lucee MariaDB extension"
-	,"version": "2.7.1"
+	,"version": "2.7.3"
 	,"location": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/lucee-mariadb.zip"
 	,"type": "lucee-extensions"
 	,"slug":"F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
@@ -11,4 +11,10 @@
 	,"documentation" : "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/README.md"
 	,"bugs":"https://github.com/cfsimplicity/lucee-mariadb/issues"
 	,"thumbnail": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/extension/META-INF/logo.png"
+	,"private":false
+	,"projectURL":"https://github.com/cfsimplicity/lucee-mariadb"
+	,"repository":{
+	  "type":"git",
+	  "URL":"https://github.com/cfsimplicity/lucee-mariadb"
+	}
 }
