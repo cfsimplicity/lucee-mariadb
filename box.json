@@ -1,6 +1,6 @@
 {
 	"name": "Lucee MariaDB extension"
-	,"version": "3.0.3"
+	,"version": "2.7.3"
 	,"location": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/lucee-mariadb.zip"
 	,"type": "lucee-extensions"
 	,"slug":"F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
