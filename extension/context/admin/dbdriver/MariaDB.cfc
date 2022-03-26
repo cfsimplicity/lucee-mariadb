@@ -29,7 +29,7 @@ component extends="types.Driver" output="no" implements="types.IDatasource" {
 	this.value.host="localhost";
 	this.value.port=3306;
 	this.className="org.mariadb.jdbc.Driver";
-	this.bundleName="org.mariadb.jdbc";
+	this.bundleName="mariadb-java-client";
 	this.dsn="jdbc:mariadb://{host}:{port}/{database}";
 
 	public void function onBeforeUpdate() {
