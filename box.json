@@ -1,14 +1,14 @@
 {
 	"name": "Lucee MariaDB extension"
 	,"version": "3.0.4"
-	,"location": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/lucee-mariadb.zip"
+	,"location": "https://github.com/cfsimplicity/lucee-mariadb/releases/download/v3.0.4/lucee-mariadb.lex"
 	,"type": "lucee-extensions"
 	,"slug":"F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
 	,"shortDescription": "Type 4 JDBC driver for MariaDB"
 	,"description": "This extension installs the MariaDB Connector/J for creating MariaDB data sources in Lucee. It is an alternative to the generic MySQL driver."
 	,"author": "Julian Halliwell"
 	,"homepage" : "https://github.com/cfsimplicity/lucee-mariadb"
-	,"documentation" : "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/README.md"
+	,"documentation" : "https://github.com/cfsimplicity/lucee-mariadb"
 	,"bugs":"https://github.com/cfsimplicity/lucee-mariadb/issues"
 	,"thumbnail": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/extension/META-INF/logo.png"
 	,"private":false

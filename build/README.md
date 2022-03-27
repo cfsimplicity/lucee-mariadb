@@ -8,3 +8,6 @@
 ```
 task run
 ```
+6. In Github, draft a new release: vx.x.x @ target:main, title: vx.x.x, description
+7. Attach the generated .lex binary, then "Publish release"
+8. Publish to Forgebox: CD in CommandBox to the root directory and execute: publish
