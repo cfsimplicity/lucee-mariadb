@@ -4,11 +4,10 @@ component{
 
 	void function run(){
 		variables.rootPath = fileSystemUtil.resolvePath( "../" );
-		generateZips();
+		generateLexFile();
 	}
 
-	private void function generateZips(){
-		zip action="zip" source="#variables.rootPath#extension/" file="#variables.rootPath#lucee-mariadb.zip" overwrite="true";
+	private void function generateLexFile(){
 		zip action="zip" source="#variables.rootPath#extension/" file="#variables.rootPath#lucee-mariadb.lex" overwrite="true";
 	}
 
