@@ -30,6 +30,7 @@ this.datasource = {
 };
 ```
 [More details on defining Lucee datasources](https://docs.lucee.org/guides/cookbooks/datasource-define-datasource.html)
+
 [Full driver documentation](https://mariadb.com/kb/en/about-mariadb-connector-j/)
 
 ## Migration from the MySQL driver
