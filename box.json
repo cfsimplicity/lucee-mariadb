@@ -10,7 +10,7 @@
 	,"homepage" : "https://github.com/cfsimplicity/lucee-mariadb"
 	,"documentation" : "https://github.com/cfsimplicity/lucee-mariadb/blob/master/README.md"
 	,"bugs":"https://github.com/cfsimplicity/lucee-mariadb/issues"
-	,"thumbnail": "https://github.com/cfsimplicity/lucee-mariadb/blob/master/extension/META-INF/logo.png"
+	,"thumbnail": "https://raw.githubusercontent.com/cfsimplicity/lucee-mariadb/master/extension/META-INF/logo.png"
 	,"private":false
 	,"projectURL":"https://github.com/cfsimplicity/lucee-mariadb"
 	,"repository":{
