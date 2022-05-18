@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Built-Date: 2022-03-26 09:00:00
-version: "3.0.4"
+version: "2.7.1"
 id: "F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
 name: "MariaDB"
 description: "JDBC Type 4 Driver for the MariaDB database."
 category: "Datasource"
 lucee-core-version: "5.0.0.019"
 start-bundles: false
-jdbc: "[{'label':'MariaDB','id':'mariadb','connectionString':'jdbc:mariadb://{host}:{port}/{database}','class':'org.mariadb.jdbc.Driver','bundleName':'mariadb-java-client','bundleVersion':'3.0.4'}]"
+jdbc: "[{'label':'MariaDB','id':'mariadb','connectionString':'jdbc:mariadb://{host}:{port}/{database}','class':'org.mariadb.jdbc.Driver','bundleName':'mariadb-java-client','bundleVersion':'2.7.1'}]"
