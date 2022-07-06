@@ -1,6 +1,6 @@
 # Lucee MariaDB Extension
 
-This extension installs the MariaDB Connector/J Type 4 JDBC driver for creating MariaDB data sources in [Lucee Server](http://lucee.org/). It is an alternative to the generic MySQL driver.
+This extension installs the MariaDB Connector/J Type 4 JDBC driver for creating MariaDB data sources in [Lucee Server](https://lucee.org/). It is an alternative to the generic MySQL driver.
 
 ## Installation
 
@@ -23,7 +23,7 @@ Once installed you can either create datasources in the Lucee Administrator usin
 ```
 this.datasource = {
 	class: "org.mariadb.jdbc.Driver"
-	,connectionString: "jdbc:mariadb://[hostname]:[port]/[database]?useUnicode=true&characterEncoding=UTF-8"// and any other required parameters
+	,connectionString: "jdbc:mariadb://[hostname]:[port]/[database]?<parameter>=<value>"
 	,username: [username]
 	,password: [password]
 	//other options if required
