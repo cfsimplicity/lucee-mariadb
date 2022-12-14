@@ -1,4 +1,4 @@
-component extends="testbox.system.BaseSpec"{
+component extends="org.lucee.cfml.test.LuceeTestCase" labels="mariaDb" {
 
 	private string function getClassName( required object object ){
 		return GetMetaData( arguments.object ).getCanonicalName()
@@ -11,7 +11,26 @@ component extends="testbox.system.BaseSpec"{
 	}
 
 	function beforeAll(){
-		include "sql/setup.cfm"
+		variables.database = {
+			host: server.system.environment.MARIADB_HOST?:"localhost"
+			,port: server.system.environment.MARIADB_PORT?:3306
+			,username: server.system.environment.MARIADB_LUCEE_USER?:"lucee"
+			,password: server.system.environment.MARIADB_LUCEE_PASSWORD?:"pass"
+		}
+
+		systemOutput(database, true);
+		
+		application action="update" datasource={
+			class: "org.mariadb.jdbc.Driver"
+			,connectionString: "jdbc:mariadb://#database.host#:#database.port#/tests?allowMultiQueries=true"
+			,username: database.username
+			,password: database.password
+		};
+
+		dbinfo type="Version" name="verify";
+		systemOutput(verify, true);
+
+		include "../sql/setup.cfm"
 		insertBlankRow()
 		variables.testValues = {
 			bit: 0
@@ -28,6 +47,7 @@ component extends="testbox.system.BaseSpec"{
 
 	function afterAll(){
 		QueryExecute( "DROP TABLE IF EXISTS `datatypes`" )
+		QueryExecute( "DROP TABLE IF EXISTS `testnotes`" )
 	}
 
 	function run( testResults, testBox ){
@@ -101,6 +121,28 @@ component extends="testbox.system.BaseSpec"{
 				var result = QueryExecute( "SELECT varcharField FROM `datatypes`" )
 				expect( result.varcharField ).toBe( testValues.varchar )
 				expect( getClassName( result.varcharField ) ).toBe( "java.lang.String" )
+			})
+
+			it( "can add and retrieve a clob value correctly", ()=> {
+				QueryExecute(" CREATE TABLE `testnotes` (
+					`id` INT(11) NOT NULL AUTO_INCREMENT,
+					`notes` MEDIUMTEXT NOT NULL COLLATE utf16_bin,
+					PRIMARY KEY (`id`) USING BTREE
+				 ) COLLATE=latin1_swedish_ci ENGINE=InnoDB
+				");
+
+				local.notes = ExtensionList().toJson();
+
+				QueryExecute(
+					sql="INSERT INTO `testnotes` ( notes ) VALUES ( :notes )",
+					params={
+						notes: { value: notes, type: "clob" }
+					}
+				);
+
+				local.qry = QueryExecute("SELECT notes from `testnotes`");
+
+				expect( qry.notes ).toBe( notes );
 			})
 
 		})
