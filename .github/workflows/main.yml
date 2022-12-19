@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      luceeVersion: 5.3.9.166 #5.3.10.97
+      luceeVersion: 5.3.10.97
 
     steps:
     - uses: actions/checkout@v3
@@ -69,3 +69,4 @@ jobs:
       env:
         testLabels: mariaDb
         testAdditional: ${{ github.workspace }}/test
+        testSuiteExtend: org.lucee.cfml.test.LuceeTestCase,testbox.system.BaseSpec
