@@ -1,4 +1,4 @@
-component extends="testbox.system.BaseSpec" labels="mariaDb" {
+component extends="org.lucee.cfml.test.LuceeTestCase" labels="mariaDb" {
 
 	private string function getClassName( required object object ){
 		return GetMetaData( arguments.object ).getCanonicalName()
