@@ -2,8 +2,13 @@ component{
 
 	property name="rootPath";
 
-	void function run(){
-		variables.rootPath = fileSystemUtil.resolvePath( "../" );
+	void function run(rootPath=""){
+		if ( isEmpty( arguments.rootPath ) )
+			variables.rootPath = fileSystemUtil.resolvePath( "../" );
+		else {
+			variables.rootPath = arguments.rootPath;
+		}
+		systemOutput("Build root path: [#variables.rootPath#]", true);
 		generateLexFile();
 	}
 
