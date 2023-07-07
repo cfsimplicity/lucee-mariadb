@@ -51,14 +51,14 @@ component extends="testbox.system.BaseSpec"{
 				QueryExecute( "UPDATE `datatypes` SET booleanField = :testValue", { testValue: { value: testValues.boolean, sqltype: "boolean" } } )
 				var result = QueryExecute( "SELECT booleanField FROM `datatypes`" )
 				expect( result.booleanField ).toBe( testValues.boolean )
-				expect( getClassName( result.booleanField ) ).toBe( "java.lang.Double" )
+				expect( getClassName( result.booleanField ) ).toBe( "java.lang.Boolean" )
 			})
 
 			it( "can add and retrieve a boolean string value correctly", ()=> {
 				QueryExecute( "UPDATE `datatypes` SET booleanField = :testValue", { testValue: { value: testValues.booleanString, sqltype: "boolean" } } )
 				var result = QueryExecute( "SELECT booleanField FROM `datatypes`" )
 				expect( result.booleanField ).toBe( testValues.boolean )
-				expect( getClassName( result.booleanField ) ).toBe( "java.lang.Double" )
+				expect( getClassName( result.booleanField ) ).toBe( "java.lang.Boolean" )
 			})
 
 			it( "can add and retrieve a date value correctly", ()=> {
@@ -93,7 +93,14 @@ component extends="testbox.system.BaseSpec"{
 				QueryExecute( "UPDATE `datatypes` SET tinyintField = :testValue", { testValue: { value: testValues.tinyint, sqltype: "tinyint" } } )
 				var result = QueryExecute( "SELECT tinyintField FROM `datatypes`" )
 				expect( result.tinyintField ).toBe( testValues.tinyint )
-				expect( getClassName( result.tinyintField ) ).toBe( "java.lang.Double" )
+				expect( getClassName( result.tinyintField ) ).toBe( "java.lang.Integer" )
+			})
+
+			it( "can add and retrieve a tinyint(1) (equals boolean) value correctly", ()=> {
+				QueryExecute( "UPDATE `datatypes` SET tinyintOneField = :testValue", { testValue: { value: testValues.boolean, sqltype: "tinyint" } } )
+				var result = QueryExecute( "SELECT tinyintOneField FROM `datatypes`" )
+				expect( result.tinyintOneField ).toBe( testValues.boolean )
+				expect( getClassName( result.tinyintOneField ) ).toBe( "java.lang.Boolean" )
 			})
 
 			it( "can add and retrieve a varchar value correctly", ()=> {
