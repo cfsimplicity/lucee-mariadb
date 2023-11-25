@@ -10,9 +10,9 @@
 task run
 ```
 * Upload .lex file to testing instance and run tests
-* Commit changes as vx.x.x
+* Commit changes as Upgrade drive to x.x.x
 2) Switch to main branch
-* Merge/commit from latest develop vx.x.x commit
+* Merge/commit from latest develop commit
 * Add tag vx.x.x
 * Push to Github
 3) In Github
