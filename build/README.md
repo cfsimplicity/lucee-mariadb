@@ -1,7 +1,7 @@
 # Upgrading the driver
 
 1) On develop branch
-* Download the new jar from https://mariadb.com/downloads/#connectors selecting the Java 8 stable connector
+* Download the new jar from https://mariadb.com/downloads/connectors/ selecting the Java 8+ GA connector
 * Add the jar to the `/extension/jars` folder and remove the previous version
 * Update `/extension/META-INF/MANIFEST.MF` with new version number and date.
 * Update `box.json` with new version number.
