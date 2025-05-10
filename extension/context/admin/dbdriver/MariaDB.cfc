@@ -1,49 +1,15 @@
 component extends="types.Driver" output="no" implements="types.IDatasource" {
 
 	fields = array(
-		field(
-			"Use Unicode"
-			,"useUnicode"
-			,"true,false"
-			,true
-			,"Should the driver use Unicode character encodings when handling strings? Should only be used when the driver can't determine the character set mapping, or you are trying to 'force' the driver to use a character set that MySQL either doesn't natively support (such as UTF-8)"
-			,"radio"
-		),
 		
-		field(
-			"Charset"
-			,"characterEncoding"
-			,"UTF-8"
-			,false
-			,"If 'Use Unicode' is set to true, what character encoding should the driver use when dealing with strings?"
-		),
-
 		field( 
 			"Allow multiple Queries"
 			,"allowMultiQueries"
 			,"true,false"
 			,false
-			,"Allow the use of ';' to delimit multiple queries during one statement"
+			,"Allow the use of "";"" to delimit multiple queries during one statement"
 			,"radio"
 		),
-		
-		field(
-			"Auto reconnect"
-			,"autoReconnect"
-			,"true,false"
-			,false
-			,"Should the driver try to re-establish stale and/or dead connections? If enabled the driver will throw an exception for a queries issued on a stale or dead connection, which belong to the current transaction, but will attempt reconnect before the next query issued on the connection in a new transaction. The use of this feature is not recommended, because it has side effects related to session state and data consistency when applications do not handle SQLExceptions properly, and is only designed to be used when you are unable to configure your application to handle SQLExceptions resulting from dead and stale connections properly. Alternatively, investigate setting the MySQL server variable 'wait_timeout' to some high value rather than the default of 8 hours."
-			,"radio"
-		),
-		
-		field(
-		 	"Throw error upon data truncation"
-		 	,"jdbcCompliantTruncation"
-		 	,"true,false"
-		 	,true
-		 	,"Truncation error (""Data truncated for column '%' at row %"", ""Out of range value for column '%' at row %"") will be thrown as an error, and not as a warning."
-		 	,"radio"
-		 ),
 
 		field(
 		 	"TinyInt(1) is bit"
@@ -52,6 +18,30 @@ component extends="types.Driver" output="no" implements="types.IDatasource" {
 		 	,true
 		 	,"Datatype mapping flag, handle MySQL Tiny as BIT(boolean)."
 		 	,"radio"
+		 ),
+
+		field(
+			"SSL mode"
+			,"sslMode"
+			,"disable,trust,verify-ca,verify-full"
+			,true
+			,"Enables SSL/TLS in a specific mode. The following values are supported:
+			<ul>
+				<li><b>disable</b>: Do not use SSL/TLS (default).</li>
+				<li><b>trust</b>: Only use SSL/TLS for encryption. Do not perform certificate or hostname verification. This mode is not safe for production applications.</li>
+				<li><b>verify-ca</b>: Use SSL/TLS for encryption and perform certificates verification, but do not perform hostname verification.</li>
+				<li><b>verify-full</b>: Use SSL/TLS for encryption, certificate verification, and hostname verification.</li>
+			</ul>"
+			,"select"
+		),
+
+		field(
+			"Allow local infile"
+			,"allowLocalInfile"
+			,"true,false"
+			,true
+			,"Defines if loading data from file with LOAD DATA LOCAL INFILE is permitted. Disabling it can improve batch performance"
+			,"radio"
 		 )
 
 	);
