@@ -6,5 +6,5 @@ name: "MariaDB"
 description: "JDBC Type 4 Driver for the MariaDB database."
 category: "Datasource"
 lucee-core-version: "5.0.0.019"
-start-bundles: false
+start-bundles: true
 jdbc: "[{'label':'MariaDB','id':'mariadb','connectionString':'jdbc:mariadb://{host}:{port}/{database}','class':'org.mariadb.jdbc.Driver','bundleName':'mariadb-java-client','bundleVersion':'3.5.3'}]"
