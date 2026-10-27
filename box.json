@@ -1,7 +1,7 @@
 {
 	"name": "Lucee MariaDB extension"
-	,"version": "3.5.10"
-	,"location": "https://github.com/cfsimplicity/lucee-mariadb/releases/download/v3.5.10/lucee-mariadb.lex"
+	,"version": "3.5.11"
+	,"location": "https://github.com/cfsimplicity/lucee-mariadb/releases/download/v3.5.11/lucee-mariadb.lex"
 	,"type": "lucee-extensions"
 	,"slug":"F2FA5DB2-0C27-499C-B1171D2D812FDAF9"
 	,"shortDescription": "Type 4 JDBC driver for MariaDB"
