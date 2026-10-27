@@ -47,6 +47,20 @@ insert_id
 ```
 Before switching drivers, you should therefore check that your code is using `generatedKey` and **not** `GENERATED_KEY`.
 
+## UNIX socket connections
+
+The extension supports local UNIX Domain Socket connections out of the box. This is a [_potentially_ more performant and secure](https://mariadb.com/docs/server/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) alternative to password authenticated connections over TCP on NIX based systems where the database server is on the same local host. Simply specify the socket path in your datasource definition in `Application.cfc`:
+```
+this.datasource = {
+	class: "org.mariadb.jdbc.Driver"
+	,connectionString: "jdbc:mariadb://localhost/[yourdatabase]?localSocket=/tmp/mariadb/mysqld.sock"
+	,username: [username]
+	,password: [password]
+	//other options if required
+};
+```
+Replace `[yourdatabase]` with the name (minus brackets) of database. To verify your database's local socket path execute the following query: `SELECT @@socket`. Note that a port is not required.
+
 ## Credits
 
 Inspiration came from [Bruce Kirkpatrick](https://github.com/jetendo).
